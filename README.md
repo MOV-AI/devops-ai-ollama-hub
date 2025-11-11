@@ -17,9 +17,17 @@ This stack can be used for various offline applications within our organization,
 ## Services
 
 - **Traefik**: A reverse proxy and load balancer for managing access to the other services.
+
 - **Ollama**: The core service for AI-Ollama.
+
+**Note**: The Ollama image has been updated to `alpine/ollama:0.12.10` for lighter weight, however it may lack some features of the full `ollama/ollama` image (e.g. GPU support).
+
 - **OpenWebUI**: A web-based user interface for interacting with the AI-Ollama services.
+
+**Note**: The OpenWebUI image has been updated to `ghcr.io/ollama-webui/ollama-webui:latest` for lightweight and better compatibility with Ollama.
+
 - **Qdrant**: A vector search engine for managing and querying embeddings.
+
 - **RAG API**: A Retrieval-Augmented Generation API for advanced querying capabilities.
 
 ## Usage
