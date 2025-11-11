@@ -1,6 +1,6 @@
 services:
   traefik:
-    image: traefik:v2.11
+    image: traefik:v3.6.0
     container_name: traefik
     command:
       - --api.insecure=true
@@ -20,7 +20,7 @@ services:
           memory: 500m
 
   ollama:
-    image: ollama/ollama:latest
+    image: alpine/ollama:0.12.10
     container_name: ollama
     restart: unless-stopped
     volumes:
@@ -46,7 +46,7 @@ services:
       - "traefik.http.services.ollama.loadbalancer.server.port=11434"
 
   openwebui:
-    image: ghcr.io/open-webui/open-webui:v0.6.22
+    image: ghcr.io/open-webui/open-webui:v0.6.36
     container_name: openwebui
     restart: unless-stopped
     environment:
