@@ -46,7 +46,6 @@ services:
       - "traefik.http.services.ollama.loadbalancer.server.port=11434"
 
   openwebui:
-    #image: ghcr.io/open-webui/open-webui:v0.6.22
     image: ghcr.io/ollama-webui/ollama-webui:latest
     container_name: openwebui
     restart: unless-stopped
