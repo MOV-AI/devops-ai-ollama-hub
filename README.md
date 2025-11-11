@@ -24,7 +24,7 @@ This stack can be used for various offline applications within our organization,
 
 - **OpenWebUI**: A web-based user interface for interacting with the AI-Ollama services.
 
-**Note**: The OpenWebUI image now uses the maintained `ghcr.io/open-webui/open-webui:v0.6.22`. The previous image `ghcr.io/ollama-webui/ollama-webui` is deprecated and unmaintained; please use the current `open-webui` image for best compatibility and security.
+**Note**: The OpenWebUI image now uses the maintained `ghcr.io/open-webui/open-webui:v0.6.36`. The previous image `ghcr.io/ollama-webui/ollama-webui` is deprecated and unmaintained; please use the current `open-webui` image for best compatibility and security.
 
 - **Qdrant**: A vector search engine for managing and querying embeddings.
 
