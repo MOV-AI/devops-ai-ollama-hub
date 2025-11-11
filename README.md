@@ -20,7 +20,7 @@ This stack can be used for various offline applications within our organization,
 
 - **Ollama**: The core service for AI-Ollama.
 
-**Note**: The Ollama image has been updated to `alpine/ollama:0.12.10` for lighter weight, however it may lack some features of the full `ollama/ollama` image (e.g. GPU support).
+**Note**: The Ollama image has been updated to `alpine/ollama:0.12.10` for lighter weight. **GPU support is not available in the Alpine image.** If you require GPU acceleration, please use the full `ollama/ollama` image instead.
 
 - **OpenWebUI**: A web-based user interface for interacting with the AI-Ollama services.
 
