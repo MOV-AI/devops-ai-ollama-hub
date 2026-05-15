@@ -14,17 +14,36 @@ This stack can be used for various offline applications within our organization,
 
 **Note**: Think of it as a self-hosted alternative to services like ChatGPT, but with an extended knowledge of our code and documentation.
 
+## Prerequisites
+
+- **Docker**: Version 20.10+ (Docker API version 1.41+)
+- **Docker Compose**: Version 1.29+
+- **Memory**: Minimum 16GB recommended (14GB allocated to Ollama service)
+- **GPU** (optional): NVIDIA GPU with NVIDIA Container Runtime for GPU acceleration
+
+> **Troubleshooting**: If you encounter the error `client version 1.24 is too old. Minimum supported API version is 1.40`, please upgrade Docker on your host machine:
+> ```bash
+> sudo apt update && sudo apt install docker.io
+> docker --version  # Verify upgrade to 20.10+
+> ```
+
 ## Services
 
-- **Traefik**: A reverse proxy and load balancer for managing access to the other services.
+- **Traefik** (v3.6): A reverse proxy and load balancer for managing access to the other services.
+  - Dashboard: http://localhost:8080
+  - Configured with Docker socket provider for automatic service discovery
+  - Health checks enabled for service resilience
+  - Security: Runs with no-new-privileges flag
 
 - **Ollama**: The core service for AI-Ollama.
 
 **Note**: The Ollama image has been updated to `alpine/ollama:0.12.10` for lighter weight. **GPU support is not available in the Alpine image.** If you require GPU acceleration, please use the full `ollama/ollama` image instead.
 
-- **OpenWebUI**: A web-based user interface for interacting with the AI-Ollama services.
+- **OpenWebUI** (v0.9.5): A web-based user interface for interacting with the AI-Ollama services.
+  - Connected to Ollama via `OLLAMA_BASE_URL` environment variable
+  - Supports RAG, model management, and advanced chat features
 
-**Note**: The OpenWebUI image now uses the maintained `ghcr.io/open-webui/open-webui:v0.6.22`. The previous image `ghcr.io/ollama-webui/ollama-webui` is deprecated and unmaintained; please use the current `open-webui` image for best compatibility and security.
+**Note**: Ensure you're using the maintained `ghcr.io/open-webui/open-webui` image. The previous image `ghcr.io/ollama-webui/ollama-webui` is deprecated and unmaintained.
 
 - **Qdrant**: A vector search engine for managing and querying embeddings.
 
