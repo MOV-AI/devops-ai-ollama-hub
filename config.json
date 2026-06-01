@@ -1,0 +1,7 @@
+{
+    "diagnostics_dir": "robot_diag/diagnostics",
+    "instructions_path": "instructions.md",
+    "api_url": "http://127.0.0.1:11434/api/generate",
+    "model_name": "phi3:latest",
+    "num_predict": 700
+}
