@@ -63,7 +63,7 @@ To get started with the AI-Ollama-Hub, follow these steps:
 2. Start the services using Docker Compose:
 
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 3. Access the services:
