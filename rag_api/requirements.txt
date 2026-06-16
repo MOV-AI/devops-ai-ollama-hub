@@ -8,4 +8,4 @@ qdrant-client==1.15.1
 chromadb==1.0.17
 
 # Standard dependencies
-tqdm==4.66.1
+tqdm==4.66.3
